@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Paypal Web
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        Use this Pay button in your payment page with the attached logic.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/paypal.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>PayPal Sample</ion-card-title>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="paypal-button-container"></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Resources</ion-label>
+    </ion-list-header>
+    <ion-item href="https://ionicframework.com/docs/native/paypal">
+      <ion-icon slot="start" color="medium" name="book"></ion-icon>
+      <ion-label>Paypal Plugin Documentation</ion-label>
+    </ion-item>
+    <ion-item href="https://github.com/paypal/PayPal-Cordova-Plugin">
+      <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      <ion-label>Paypal Plugin Repository</ion-label>
+    </ion-item>
+    <ion-item href="https://ionicframework.com/docs/layout/structure">
+      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+      <ion-label>Ionic 4 - Paypal Integration</ion-label>
+    </ion-item>
+    <ion-item href="https://store.enappd.com">
+      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+      <ion-label>More Enappd Starters</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
