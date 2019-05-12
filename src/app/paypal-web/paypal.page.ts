@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+// interface Window {
+//   window?: any;
+// }
+// declare var window: Window;
 
 @Component({
   selector: 'app-paypal',
@@ -14,7 +18,7 @@ export class PaypalPage {
     let _this = this;
     setTimeout(() => {
       // Render the PayPal button into #paypal-button-container
-      window.paypal.Buttons({
+      <any>window['paypal'].Buttons({
 
         // Set up the transaction
         createOrder: function (data, actions) {
