@@ -13,10 +13,10 @@ export class PaypalPage {
   currencyIcon: string = '$';
 
   payWithPaypal() {
-    console.log("Pay ????");
+    console.log('payment!!');
     this.payPal.init({
       PayPalEnvironmentProduction: 'YOUR_PRODUCTION_CLIENT_ID',
-      PayPalEnvironmentSandbox: 'AQEWlh6KVAMqVwWMwbeDro__MU88dUKdisVCn1DMcp-igKMNWsWW2qvpVEW8KSNq9Zq7Dq_6AqobO6xR'
+      PayPalEnvironmentSandbox: 'AUJW5SucPpoFEjsrEa4ZyjxZf7_xaZU4pL0ILyYnx2TYVe1BYBKbcGDclYR5Km37NNI8CLUqEHIyB7PI'
     }).then(() => {
       // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction
       this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({
@@ -45,13 +45,16 @@ export class PaypalPage {
           //     "intent": "sale"
           //   }
           // }
-        }, () => {
+        }, (err) => {
+          console.log('error 1', err);
           // Error or render dialog closed without being successful
         });
-      }, () => {
+      }, (err) => {
+        console.log('error 2', err);
         // Error in configuration
       });
-    }, () => {
+    }, (err) => {
+      console.log('error 3', err);
       // Error in initialization, maybe PayPal isn't supported or something else
     });
   }

@@ -4,20 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'paypal',
+    redirectTo: 'paypal-web',
     pathMatch: 'full'
   },
   {
     path: 'paypal',
-    loadChildren: './paypal/paypal.module#PaypalPageModule'
+    loadChildren: () => import('./paypal/paypal.module').then(m => m.PaypalPageModule)
   },
   {
     path: 'paypal-web',
-    loadChildren: './paypal-web/paypal.module#PaypalPageModule'
-  },
-  {
-    path: 'stripe',
-    loadChildren: './list/list.module#ListPageModule'
+    loadChildren: () => import('./paypal-web/paypal.module').then(m => m.PaypalPageModule)
   }
 ];
 
